@@ -7,22 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using MiLibreria;
 
 namespace SistemasVentas
 {
-    public partial class Form1 : Form
+    public partial class VentanaUser : Form
     {
-        public Form1()
+        public VentanaUser()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void VentanaUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Utilidades.Ejecutar("Select * FROM Clientes Where id =1");
-            
+            Application.Exit();
         }
     }
 }
