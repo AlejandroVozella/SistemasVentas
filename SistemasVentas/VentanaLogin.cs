@@ -9,15 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MiLibreria;
+using static SistemasVentas.FormularioBase;
 
 namespace SistemasVentas
 {
-    public partial class VentanaLogin : Form
+    public partial class VentanaLogin : FormularioBase
     {
         public VentanaLogin()
         {
             InitializeComponent();
         }
+
+        public static String Codigo = "";
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,12 +30,14 @@ namespace SistemasVentas
 
                 DataSet ds = Utilidades.Ejecutar(CMD);
 
+                Codigo = ds.Tables[0].Rows[0]["id_usuario"].ToString().Trim();
+
                 string cuenta = ds.Tables[0].Rows[0]["account"].ToString().Trim();
                 string contra= ds.Tables[0].Rows[0]["password"].ToString().Trim();
 
                 if (cuenta == txtNomAcc.Text.Trim() && contra==txtPass.Text.Trim() )
                 {
-                    if (cuenta== txtNomAcc.Text.Trim() && contra == txtPass.Text.Trim()==true)
+                    if (Convert.ToBoolean(ds.Tables[0].Rows[0]["Status_admin"])==true)
                     {
                         VentanaAdmin VenAd = new VentanaAdmin();
 
@@ -48,16 +53,23 @@ namespace SistemasVentas
                     }
                 }
 
-                else
-                {
-                    MessageBox.Show("Usuario o Contraseña Incorrecta");
-                }
+               
             }
-            catch (Exception error)
+            catch (Exception )
             {
-               MessageBox.Show("Usuario o Contraseña Incorrecta");
+              MessageBox.Show("Contraseña incorrecta");
             }
-            
+
+        }
+
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void VentanaLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

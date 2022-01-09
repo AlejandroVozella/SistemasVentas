@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiLibreria;
+using static SistemasVentas.FormularioBase;
 
 namespace SistemasVentas
 {
-    public partial class VentanaAdmin : Form
+    public partial class VentanaAdmin : FormularioBase
+
     {
         public VentanaAdmin()
         {
@@ -25,7 +27,7 @@ namespace SistemasVentas
 
         private void VentanaAdmin_Load(object sender, EventArgs e)
         {
-            string cmd = "SELECT * FROM  WHERE id_usuario=" + VentanaLogin.Codigo;
+            string cmd = "SELECT * FROM Usuarios WHERE id_usuario=" + VentanaLogin.Codigo;
 
 
             DataSet DS = Utilidades.Ejecutar(cmd);
@@ -42,6 +44,13 @@ namespace SistemasVentas
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ContenedorPrincipal Conp = new ContenedorPrincipal();
+            this.Hide();
+            Conp.Show();
         }
     }
 }

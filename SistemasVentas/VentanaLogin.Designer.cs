@@ -30,12 +30,16 @@ namespace SistemasVentas
         private void InitializeComponent()
         {
             this.btnIniciar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.Usuario = new System.Windows.Forms.Label();
             this.Contraseña = new System.Windows.Forms.Label();
             this.txtNomAcc = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(290, 327);
+            this.btnSalir.Size = new System.Drawing.Size(89, 23);
             // 
             // btnIniciar
             // 
@@ -46,15 +50,6 @@ namespace SistemasVentas
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(328, 327);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // Usuario
             // 
@@ -89,8 +84,9 @@ namespace SistemasVentas
             this.txtPass.Size = new System.Drawing.Size(140, 20);
             this.txtPass.TabIndex = 6;
             // 
-            // Form1
+            // VentanaLogin
             // 
+            this.AcceptButton = this.btnIniciar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 389);
@@ -98,11 +94,18 @@ namespace SistemasVentas
             this.Controls.Add(this.txtNomAcc);
             this.Controls.Add(this.Contraseña);
             this.Controls.Add(this.Usuario);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIniciar);
-            this.IsMdiContainer = true;
-            this.Name = "Form1";
+            this.Name = "VentanaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaLogin_FormClosed);
+            this.Load += new System.EventHandler(this.VentanaLogin_Load);
+            this.Controls.SetChildIndex(this.btnIniciar, 0);
+            this.Controls.SetChildIndex(this.Usuario, 0);
+            this.Controls.SetChildIndex(this.Contraseña, 0);
+            this.Controls.SetChildIndex(this.txtNomAcc, 0);
+            this.Controls.SetChildIndex(this.txtPass, 0);
+            this.Controls.SetChildIndex(this.btnSalir, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,7 +114,6 @@ namespace SistemasVentas
         #endregion
 
         private System.Windows.Forms.Button btnIniciar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label Usuario;
         private System.Windows.Forms.Label Contraseña;
         private System.Windows.Forms.TextBox txtNomAcc;
