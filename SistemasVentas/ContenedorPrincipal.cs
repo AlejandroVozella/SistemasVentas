@@ -123,5 +123,26 @@ namespace SistemasVentas
         {
 
         }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultarClientes ConCli = new ConsultarClientes();
+            ConCli.MdiParent = this;
+            ConCli.Show();
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarProductos ConPro = new ConsultarProductos();
+            ConPro.MdiParent = this;
+            ConPro.Show();
+        }
+
+        private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facturacion fac = new Facturacion();
+            fac.MdiParent = this;
+            fac.Show();
+        }
     }
 }

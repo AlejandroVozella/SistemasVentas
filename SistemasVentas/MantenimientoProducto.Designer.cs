@@ -29,34 +29,14 @@ namespace SistemasVentas
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtIdProducto = new System.Windows.Forms.TextBox();
-            this.txtNomProducto = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtPrecio = new MiLibreria.ErrortxtBox();
+            this.txtNomProducto = new MiLibreria.ErrortxtBox();
+            this.txtIdProducto = new MiLibreria.ErrortxtBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtIdProducto
-            // 
-            this.txtIdProducto.Location = new System.Drawing.Point(186, 36);
-            this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(215, 20);
-            this.txtIdProducto.TabIndex = 5;
-            // 
-            // txtNomProducto
-            // 
-            this.txtNomProducto.Location = new System.Drawing.Point(186, 82);
-            this.txtNomProducto.Name = "txtNomProducto";
-            this.txtNomProducto.Size = new System.Drawing.Size(215, 20);
-            this.txtNomProducto.TabIndex = 6;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(186, 131);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(215, 20);
-            this.txtPrecio.TabIndex = 7;
             // 
             // label1
             // 
@@ -85,17 +65,45 @@ namespace SistemasVentas
             this.label3.TabIndex = 10;
             this.label3.Text = "Precio";
             // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(186, 131);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(215, 20);
+            this.txtPrecio.SoloNumeros = true;
+            this.txtPrecio.TabIndex = 13;
+            this.txtPrecio.Validar = true;
+            // 
+            // txtNomProducto
+            // 
+            this.txtNomProducto.Location = new System.Drawing.Point(186, 83);
+            this.txtNomProducto.Name = "txtNomProducto";
+            this.txtNomProducto.Size = new System.Drawing.Size(215, 20);
+            this.txtNomProducto.SoloNumeros = false;
+            this.txtNomProducto.TabIndex = 12;
+            this.txtNomProducto.Validar = true;
+            // 
+            // txtIdProducto
+            // 
+            this.txtIdProducto.Location = new System.Drawing.Point(186, 32);
+            this.txtIdProducto.Name = "txtIdProducto";
+            this.txtIdProducto.Size = new System.Drawing.Size(215, 20);
+            this.txtIdProducto.SoloNumeros = true;
+            this.txtIdProducto.TabIndex = 11;
+            this.txtIdProducto.Validar = true;
+            this.txtIdProducto.TextChanged += new System.EventHandler(this.txtIdProducto_TextChanged);
+            // 
             // MantenimientoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNomProducto);
             this.Controls.Add(this.txtIdProducto);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Name = "MantenimientoProducto";
             this.Text = "MantenimientoProducto";
             this.Load += new System.EventHandler(this.MantenimientoProducto_Load);
@@ -104,24 +112,24 @@ namespace SistemasVentas
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.button3, 0);
             this.Controls.SetChildIndex(this.button4, 0);
-            this.Controls.SetChildIndex(this.txtIdProducto, 0);
-            this.Controls.SetChildIndex(this.txtNomProducto, 0);
-            this.Controls.SetChildIndex(this.txtPrecio, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.txtIdProducto, 0);
+            this.Controls.SetChildIndex(this.txtNomProducto, 0);
+            this.Controls.SetChildIndex(this.txtPrecio, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtIdProducto;
-        private System.Windows.Forms.TextBox txtNomProducto;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private MiLibreria.ErrortxtBox txtIdProducto;
+        private MiLibreria.ErrortxtBox txtNomProducto;
+        private MiLibreria.ErrortxtBox txtPrecio;
     }
 }

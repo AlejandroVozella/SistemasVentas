@@ -22,16 +22,23 @@ namespace SistemasVentas
 
         public override Boolean Guardar()
         {
-            try
+           if (Utilidades.ValidarFormulario(this, errorProvider1) == false)
             {
-                string cmd = string.Format("EXEC ActualizaArticulos '{0}','{1}','{2}'", txtIdProducto.Text.Trim(), txtNomProducto.Text.Trim(), txtPrecio.Text.Trim());
-                Utilidades.Ejecutar(cmd);
-                MessageBox.Show("Se ha Guardado Correctamente");
-                return true; 
+                try
+                {
+                    string cmd = string.Format("EXEC ActualizaArticulos '{0}','{1}','{2}'", txtIdProducto.Text.Trim(), txtNomProducto.Text.Trim(), txtPrecio.Text.Trim());
+                    Utilidades.Ejecutar(cmd);
+                    MessageBox.Show("Se ha Guardado Correctamente");
+                    return true;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ha Ocurrido un error:" + error.Message);
+                    return false;
+                }
             }
-            catch(Exception error)
+           else
             {
-                MessageBox.Show("Ha Ocurrido un error:" + error.Message);
                 return false;
             }
         }
@@ -46,13 +53,18 @@ namespace SistemasVentas
             }
             catch (Exception error)
             {
-                MessageBox.Show("Ha ocurrido un error:" + error.Message);
+                MessageBox.Show("Ha ocurrido un error:" + error.Message); 
             }
         }
 
         private void MantenimientoProducto_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
         }
     }
 }

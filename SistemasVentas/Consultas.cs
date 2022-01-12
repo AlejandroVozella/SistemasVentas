@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SistemasVentas.FormularioBase;
+using MiLibreria;
 
 namespace SistemasVentas
 {
@@ -17,10 +18,32 @@ namespace SistemasVentas
         {
             InitializeComponent();
         }
+         public DataSet LlenarDataGV(string tabla)
+        {
+            DataSet DS;
 
+            string cmd = string.Format("SELECT * FROM " + tabla);
+            DS = Utilidades.Ejecutar(cmd);
+
+            return DS;
+        }
         private void Consultas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            } 
+               
         }
     }
 }
