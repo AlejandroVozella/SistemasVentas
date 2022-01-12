@@ -29,7 +29,7 @@ namespace SistemasVentas
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.Label();
@@ -43,15 +43,15 @@ namespace SistemasVentas
             this.btnSalir.Location = new System.Drawing.Point(600, 376);
             this.btnSalir.Size = new System.Drawing.Size(137, 23);
             // 
-            // button1
+            // btnSeleccionar
             // 
-            this.button1.Location = new System.Drawing.Point(110, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSeleccionar.Location = new System.Drawing.Point(110, 376);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(154, 23);
+            this.btnSeleccionar.TabIndex = 1;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -111,12 +111,12 @@ namespace SistemasVentas
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSeleccionar);
             this.Name = "Consultas";
             this.Text = "Consultas";
             this.Load += new System.EventHandler(this.Consultas_Load);
             this.Controls.SetChildIndex(this.btnSalir, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btnSeleccionar, 0);
             this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.button3, 0);
             this.Controls.SetChildIndex(this.Nombre, 0);
@@ -131,7 +131,7 @@ namespace SistemasVentas
         #endregion
         private System.Windows.Forms.Label Nombre;
         public System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnSeleccionar;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.TextBox textBox1;

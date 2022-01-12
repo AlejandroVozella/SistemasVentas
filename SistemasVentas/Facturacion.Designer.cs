@@ -30,6 +30,7 @@ namespace SistemasVentas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.brnColocar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
@@ -77,6 +78,7 @@ namespace SistemasVentas
             this.brnColocar.TabIndex = 1;
             this.brnColocar.Text = "Colocar";
             this.brnColocar.UseVisualStyleBackColor = true;
+            this.brnColocar.Click += new System.EventHandler(this.brnColocar_Click);
             // 
             // btnEliminar
             // 
@@ -86,6 +88,7 @@ namespace SistemasVentas
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCliente
             // 
@@ -179,7 +182,11 @@ namespace SistemasVentas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -190,7 +197,11 @@ namespace SistemasVentas
             this.ColImporte});
             this.dataGridView1.Location = new System.Drawing.Point(49, 189);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(552, 239);
             this.dataGridView1.TabIndex = 14;
             // 
@@ -198,27 +209,32 @@ namespace SistemasVentas
             // 
             this.ColCodigo.HeaderText = "Codigo";
             this.ColCodigo.Name = "ColCodigo";
+            this.ColCodigo.ReadOnly = true;
             // 
             // ColDescripcion
             // 
             this.ColDescripcion.HeaderText = "Descripcion";
             this.ColDescripcion.Name = "ColDescripcion";
+            this.ColDescripcion.ReadOnly = true;
             this.ColDescripcion.Width = 150;
             // 
             // ColPrecio
             // 
             this.ColPrecio.HeaderText = "Precio";
             this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
             // 
             // ColCantidad
             // 
             this.ColCantidad.HeaderText = "Cantidad";
             this.ColCantidad.Name = "ColCantidad";
+            this.ColCantidad.ReadOnly = true;
             // 
             // ColImporte
             // 
             this.ColImporte.HeaderText = "Importe";
             this.ColImporte.Name = "ColImporte";
+            this.ColImporte.ReadOnly = true;
             this.ColImporte.Width = 110;
             // 
             // Usuario
