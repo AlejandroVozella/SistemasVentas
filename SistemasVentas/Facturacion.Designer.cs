@@ -98,6 +98,7 @@ namespace SistemasVentas
             this.btnCliente.TabIndex = 3;
             this.btnCliente.Text = "Clientes";
             this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnProductos
             // 
@@ -107,6 +108,7 @@ namespace SistemasVentas
             this.btnProductos.TabIndex = 4;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // bntNuevo
             // 
@@ -116,6 +118,7 @@ namespace SistemasVentas
             this.bntNuevo.TabIndex = 5;
             this.bntNuevo.Text = "Nuevo";
             this.bntNuevo.UseVisualStyleBackColor = true;
+            this.bntNuevo.Click += new System.EventHandler(this.bntNuevo_Click);
             // 
             // btnFacturar
             // 
@@ -125,6 +128,7 @@ namespace SistemasVentas
             this.btnFacturar.TabIndex = 6;
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // txtPrecio
             // 

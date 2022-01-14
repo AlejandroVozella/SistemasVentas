@@ -122,5 +122,59 @@ namespace SistemasVentas
                 cont_fila--;
             }
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            ConsultarClientes ConCli = new ConsultarClientes();
+            ConCli.ShowDialog();
+
+            if (ConCli.DialogResult == DialogResult.OK)
+            {
+                txtCodigoCli.Text = ConCli.dataGridView1.Rows[ConCli.dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                txtCliente.Text = ConCli.dataGridView1.Rows[ConCli.dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+
+                txtCodigoPro.Focus();
+
+            }
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            ConsultarProductos ConPro = new ConsultarProductos();
+            ConPro.ShowDialog();
+
+            if (ConPro.DialogResult == DialogResult.OK)
+            {
+                txtCodigoPro.Text = ConPro.dataGridView1.Rows[ConPro.dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                txtDescripcion.Text = ConPro.dataGridView1.Rows[ConPro.dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+                txtPrecio.Text = ConPro.dataGridView1.Rows[ConPro.dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
+                txtCantidad.Focus();
+            }
+        }
+
+        private void bntNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        public override void Nuevo()
+        {
+            txtCodigoCli.Text = " ";
+            txtCliente.Text = " ";
+            txtDescripcion.Text = " ";
+            txtPrecio.Text = " ";
+            txtCantidad.Text = " ";
+            lblTotal.Text = "RDS 0";
+            dataGridView1.Rows.Clear();
+            cont_fila = 0;
+            total = 0;
+            txtCliente.Focus();
+
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
